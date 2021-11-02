@@ -49,18 +49,18 @@
   ],
   "sentLetters": [
     {
-      "authorId": 2,
-      "letter": "Hello friend",
-      "recipientAuthorId": 3,
-      "topicId": 2,
+      "authorId": 3,
+      "letter": "When are you going to write a sequel to Lamb??",
+      "recipientAuthorId": 1,
+      "topicId": 1,
       "date": "11/2/2021",
       "id": 1
     },
     {
-      "authorId": 1,
-      "letter": "When are you going to write a sequel to Lamb??",
+      "authorId": 2,
+      "letter": "Hey friend, want to grab drinks sometime soon?",
       "recipientAuthorId": 3,
-      "topicId": 1,
+      "topicId": 2,
       "date": "11/2/2021",
       "id": 2
     }

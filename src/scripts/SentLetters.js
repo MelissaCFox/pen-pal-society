@@ -23,11 +23,11 @@ const sentLetterItemBuilder = (letter) => {
     )
     
     return `<li class="sentLetter">
-                <h3>Dear ${foundRecipient.firstName} ${foundRecipient.lastName} (${foundRecipient.email}),</h3>
-                <h3>${letter.letter}</h3>
-                <h3>Sincerely, ${foundAuthor.firstName} ${foundAuthor.lastName} (${foundAuthor.email})</h3>
-                <p>Sent on ${letter.date}</p>
-                <div class="topic-icon">${foundTopic.topic}</div>
+                <section class="letter header">Dear ${foundRecipient.firstName} ${foundRecipient.lastName} (${foundRecipient.email}),</section>
+                <section class="letter body">${letter.letter}</section>
+                <section class="letter end">Sincerely, ${foundAuthor.firstName} ${foundAuthor.lastName} (${foundAuthor.email})</section>
+                <section class="letter date">Sent on ${letter.date}</section>
+                <section class="letter topic">${foundTopic.topic}</section>
             </li>`
 
 }
