@@ -8,6 +8,10 @@
     margin: 0.5em;
 }
 
+h1 {
+    text-align: center;
+}
+
 ul {
     list-style: none;
     display: flex;
@@ -15,6 +19,11 @@ ul {
     margin-block-start: 0;
     margin-block-end: 0;
     padding-inline-start: 0;
+}
+
+.letterForm {
+    border: 2px dashed rgb(193, 216, 218);
+    padding: 10px 10px 0 10px;
 }
 
 .letterfield {
@@ -35,7 +44,7 @@ label {
 }
 
 .field {
-    margin: 1em 0 0 0;
+    margin: 0 0 1em 0;
 }
 
 .select {
@@ -57,10 +66,16 @@ label {
 
 }
 
+.sentLetters {
+    padding-top: 10px;
+}
+
 .sentLetter {
-    background-color: rgb(221, 237, 238);
     padding: 1em;
 }
+
+.sentLetter:nth-child(odd) {background: rgb(221, 237, 238)}
+.sentLetter:nth-child(even) {background: rgb(203, 215, 216)}
 
 .header, .body, .end {
     font-family: cursive;
