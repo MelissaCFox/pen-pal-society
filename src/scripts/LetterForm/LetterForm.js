@@ -1,4 +1,4 @@
-import { getTransientState, sendLetter } from "../dataAccess.js";
+import { getTopics, getTransientState, sendLetter } from "../dataAccess.js";
 import { Authors } from "./Authors.js";
 import { Recipients } from "./Recipients.js";
 import { Topics } from "./Topics.js";
@@ -11,17 +11,51 @@ mainContainer.addEventListener("click", clickEvent => {
         const userAuthorId = transientState.authorId
         const userMessage = document.querySelector("textarea[name='letter']").value
         const userRecipientAuthorId = transientState.recipientAuthorId
-        const userTopicId = transientState.topicId
 
-        const objectToSendToAPI = {
+        const getCheckedBoxes = () => {
+            const checkboxes = document.getElementsByClassName("checkbox")
+            const checkedCheckboxes = []
+            for (let i=0; i<checkboxes.length; i++) {
+                if(checkboxes[i].checked) {
+                    checkedCheckboxes.push(checkboxes[i])
+                }
+            }
+            return checkedCheckboxes
+        }
+        
+        const checkedCheckboxes = getCheckedBoxes()
+        
+        const topics = getTopics()
+        let userSelectedTopicsArray = []
+        
+        const addToUserSelectedTopicsArray = () => {
+            checkedCheckboxes.forEach(
+                (element) => {
+                    for (const topicObj of topics) {
+                        if(topicObj.id === parseInt(element.value)) {
+                            userSelectedTopicsArray.push(topicObj.id)
+                        }
+                        
+                    }
+
+                }
+            )
+        
+        }
+
+        addToUserSelectedTopicsArray()
+
+        const userLetterObj = {
             authorId: userAuthorId,
             letter: userMessage,
             recipientAuthorId: userRecipientAuthorId,
-            topicId: userTopicId,
-            date: new Date().toLocaleDateString()
+            date: new Date().toLocaleDateString(),
+            selectedTopics: userSelectedTopicsArray
         }
 
-        sendLetter(objectToSendToAPI)
+        sendLetter(userLetterObj)
+
+
     }
 })
 

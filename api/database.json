@@ -54,6 +54,9 @@
       "recipientAuthorId": 1,
       "topicId": 1,
       "date": "11/2/2021",
+      "selectedTopics": [
+        1
+      ],
       "id": 1
     },
     {
@@ -62,6 +65,9 @@
       "recipientAuthorId": 3,
       "topicId": 2,
       "date": "11/2/2021",
+      "selectedTopics": [
+        2
+      ],
       "id": 2
     },
     {
@@ -70,7 +76,33 @@
       "recipientAuthorId": 1,
       "topicId": 1,
       "date": "11/3/2021",
+      "selectedTopics": [
+        1,
+        4
+      ],
       "id": 3
+    },
+    {
+      "authorId": 3,
+      "letter": "test",
+      "recipientAuthorId": 3,
+      "date": "11/3/2021",
+      "selectedTopics": [
+        4,
+        5
+      ],
+      "id": 4
+    },
+    {
+      "authorId": 4,
+      "letter": "final test",
+      "recipientAuthorId": 2,
+      "date": "11/3/2021",
+      "selectedTopics": [
+        2,
+        4
+      ],
+      "id": 5
     }
   ]
 }

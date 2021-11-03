@@ -15,20 +15,29 @@ const sentLetterItemBuilder = (letter) => {
         }
     )
 
-    const topics = getTopics()
-    const foundTopic = topics.find(
-        (topic) => {
-            return (topic.id === letter.topicId)
-        }
-    )
     
-    return `<li class="sentLetter">
-                <section class="letter header">Dear ${foundRecipient.firstName} ${foundRecipient.lastName} (${foundRecipient.email}),</section>
-                <section class="letter body">${letter.letter}</section>
-                <section class="letter end">Sincerely, ${foundAuthor.firstName} ${foundAuthor.lastName} (${foundAuthor.email})</section>
-                <section class="letter date">Sent on ${letter.date}</section>
-                <section class="letter topic">${foundTopic.topic}</section>
-            </li>`
+    let html =
+    `<li class="sentLetter">
+    <section class="letter header">Dear ${foundRecipient.firstName} ${foundRecipient.lastName} (${foundRecipient.email}),</section>
+    <section class="letter body">${letter.letter}</section>
+    <section class="letter end">Sincerely, ${foundAuthor.firstName} ${foundAuthor.lastName} (${foundAuthor.email})</section>
+    <section class="letter date">Sent on ${letter.date}</section>
+    <section class="selectedTopics">`
+    
+    let selectedTopics = letter.selectedTopics
+    selectedTopics.forEach(
+        (selectedTopicId) => {
+                const topics = getTopics()
+                for (const topic of topics) {
+                    if (topic.id === selectedTopicId) {
+                        html += `<section class="letter topic">${topic.topic}</section>`
+                    }                    
+                }
+            }
+        ) 
+                    
+        html += `</section></li>`
+        return html
 
 }
 

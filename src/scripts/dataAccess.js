@@ -32,7 +32,6 @@ export const fetchData = () => {
                 applicationState.sentLetters = sentLetters
             }
         )
-
 }
 
 export const getAuthors = () => {
@@ -85,4 +84,38 @@ export const sendLetter = (userSentLetter) => {
         .then(() => {
             mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
         })
+
+
+}
+
+export const sendLetterAndSelectedTopics = (userLetterObj, userSelectedTopicsArray) => {
+    const fetchOptionLetter = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userLetterObj)
+    }
+
+    fetch(`${API}/sentLetters`, fetchOptionLetter)
+        .then(response => response.jason())
+
+        .then(
+            userSelectedTopicsArray.forEach((selectedTopicObj) => {
+
+                fetch(`${API}/selectedTopics`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(selectedTopicObj)
+                })
+                    .then(response => response.json())
+                    
+            })
+        )
+        .then(() => {
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+
 }

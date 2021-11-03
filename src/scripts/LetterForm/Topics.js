@@ -8,7 +8,7 @@ export const Topics = () => {
                 <ul>`
 
     for (const topic of topics) {
-        html += `<li><input type="radio" name="topic" value="${topic.id}">${topic.topic}</li>`
+        html += `<li><input type="checkbox" class="checkbox" name="topic" value="${topic.id}">${topic.topic}</li>`
     }
 
     html += `</ul>`
