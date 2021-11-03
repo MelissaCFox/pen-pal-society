@@ -70,6 +70,18 @@
         2
       ],
       "id": 2
+    },
+    {
+      "authorId": 3,
+      "letter": "delete test",
+      "recipientAuthorId": 1,
+      "date": "11/3/2021",
+      "selectedTopics": [
+        1,
+        4,
+        5
+      ],
+      "id": 3
     }
   ]
 }

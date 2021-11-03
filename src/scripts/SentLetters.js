@@ -1,4 +1,4 @@
-import { getAuthors, getSentLetters, getTopics} from "./dataAccess.js"
+import { deleteLetter, getAuthors, getSentLetters, getTopics} from "./dataAccess.js"
 
 
 
@@ -22,6 +22,7 @@ const sentLetterItemBuilder = (letter) => {
     <section class="letter body">${letter.letter}</section>
     <section class="letter end">Sincerely, ${foundAuthor.firstName} ${foundAuthor.lastName} (${foundAuthor.email})</section>
     <section class="letter date">Sent on ${letter.date}</section>
+    <section class="footer">
     <section class="selectedTopics">`
     
     let selectedTopics = letter.selectedTopics
@@ -36,9 +37,15 @@ const sentLetterItemBuilder = (letter) => {
             }
         ) 
                     
-        html += `</section></li>`
-        return html
-
+    html += `</section>
+            <div class="deleteSentLetter">
+                <button class="deleteButton" id="sentLetter--${letter.id}">
+                    Delete Letter
+                </button>
+            </div> 
+            </section>       
+            </li>`
+    return html
 }
 
 
@@ -51,3 +58,15 @@ export const SentLetters = () => {
     html += "</ul></section>"
     return html
 }
+
+
+const mainContainer = document.querySelector("#container")
+
+mainContainer.addEventListener("click", click => {
+    if (click.target.id.startsWith("sentLetter")) {
+        const [, sentLetterId] = click.target.id.split("--")
+        deleteLetter(parseInt(sentLetterId))
+    }
+
+})
+

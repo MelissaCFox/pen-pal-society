@@ -88,34 +88,11 @@ export const sendLetter = (userSentLetter) => {
 
 }
 
-export const sendLetterAndSelectedTopics = (userLetterObj, userSelectedTopicsArray) => {
-    const fetchOptionLetter = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(userLetterObj)
-    }
-
-    fetch(`${API}/sentLetters`, fetchOptionLetter)
-        .then(response => response.jason())
-
+export const deleteLetter = (id) => {
+    return fetch(`${API}/sentLetters/${id}`, { method: "DELETE" })
         .then(
-            userSelectedTopicsArray.forEach((selectedTopicObj) => {
-
-                fetch(`${API}/selectedTopics`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(selectedTopicObj)
-                })
-                    .then(response => response.json())
-                    
-            })
+            () => {
+                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            }
         )
-        .then(() => {
-            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
-        })
-
 }
