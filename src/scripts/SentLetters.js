@@ -36,7 +36,7 @@ const sentLetterItemBuilder = (letter) => {
 
 export const SentLetters = () => {
     const sentLetters = getSentLetters()
-    let html = `<section class="allSentLetters"><ul>`
+    let html = `<section class="allSentLetters"><ul class="allLetters">`
     const sentLettersListItems = sentLetters.map(sentLetterItemBuilder)
     html += sentLettersListItems.join("")
     html += "</ul></section>"

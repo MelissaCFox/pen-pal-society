@@ -9,7 +9,7 @@ mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "sendLetter") {
         const transientState = getTransientState()
         const userAuthorId = transientState.authorId
-        const userMessage = document.querySelector("input[name='letter']").value
+        const userMessage = document.querySelector("textarea[name='letter']").value
         const userRecipientAuthorId = transientState.recipientAuthorId
         const userTopicId = transientState.topicId
 
@@ -28,17 +28,17 @@ mainContainer.addEventListener("click", clickEvent => {
 
 export const LetterForm = () => {
     return `
-        <div class="field">
+        <div class="field author select">
             ${Authors()}
         </div>
         <div class="field">
             <label class="label" for="letter">Letter</label>
-            <input type="text" name="letter" class="input" />
+            <textarea name="letter" class="input letterfield"></textarea>
         </div>
-        <div class="field">
+        <div class="field topics choose">
             ${Topics()}
         </div>
-        <div class="field">
+        <div class="field recipient select">
             ${Recipients()}
         </div>
 
