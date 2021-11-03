@@ -66,43 +66,10 @@
       "topicId": 2,
       "date": "11/2/2021",
       "selectedTopics": [
+        1,
         2
       ],
       "id": 2
-    },
-    {
-      "authorId": 4,
-      "letter": "This is a test to see how it will look if I write out a long letter. I want to make sure the styling of the Sent Letters format looks decent enough when you input a long letter, where there's one or more multi-line paragraphs that make up the body of the letter. It's not going to be especially deep or anything. I'm also going to see if it can actually handle multiple paragraphs appropriately or combine them into one...\n\nThis is the start of the second paragraph. It should appear separately but maybe not?",
-      "recipientAuthorId": 1,
-      "topicId": 1,
-      "date": "11/3/2021",
-      "selectedTopics": [
-        1,
-        4
-      ],
-      "id": 3
-    },
-    {
-      "authorId": 3,
-      "letter": "test",
-      "recipientAuthorId": 3,
-      "date": "11/3/2021",
-      "selectedTopics": [
-        4,
-        5
-      ],
-      "id": 4
-    },
-    {
-      "authorId": 4,
-      "letter": "final test",
-      "recipientAuthorId": 2,
-      "date": "11/3/2021",
-      "selectedTopics": [
-        2,
-        4
-      ],
-      "id": 5
     }
   ]
 }
