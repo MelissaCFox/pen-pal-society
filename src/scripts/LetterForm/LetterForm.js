@@ -47,7 +47,7 @@ mainContainer.addEventListener("click", clickEvent => {
         }
 
         addToUserSelectedTopicsArray()
-        //userLetter object that is sent to the API (using sendLetter function), includes a key (selectedTopics) with an array value of the selected topics
+        //userLetter object that is sent to the API (using sendLetter function), includes a key (selectedTopics) with an array value of the selected topicIds
         const userLetterObj = {
             authorId: userAuthorId,
             letter: userMessage,
