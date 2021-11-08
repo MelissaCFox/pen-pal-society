@@ -1,7 +1,7 @@
 import { getTopics, setTopicId } from "../dataAccess.js"
 
 
-
+//Generate a list of checkbox options for all of the availabel topics
 export const Topics = () => {
     const topics = getTopics()
     let html = `<label>Topics</label>

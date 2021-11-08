@@ -33,7 +33,7 @@ export const fetchData = () => {
             }
         )
 }
-
+//Get Application State data
 export const getAuthors = () => {
     return applicationState.authors.map(author => ({ ...author }))
 }
@@ -67,7 +67,7 @@ export const setTopicId = (topicId) => {
 }
 
 
-
+//Fetch Options
 const mainContainer = document.querySelector("#container")
 
 export const sendLetter = (userSentLetter) => {

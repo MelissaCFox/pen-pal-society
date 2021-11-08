@@ -5,6 +5,7 @@ import { Topics } from "./Topics.js";
 
 const mainContainer = document.querySelector("#container")
 
+//Event listener for submitting letter entry
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "sendLetter") {
         const transientState = getTransientState()
@@ -12,6 +13,7 @@ mainContainer.addEventListener("click", clickEvent => {
         const userMessage = document.querySelector("textarea[name='letter']").value
         const userRecipientAuthorId = transientState.recipientAuthorId
 
+        //check current state of all checkbox elements. If boxes are currently checked, push the element html string to a new array "checkedCheckboxes"
         const getCheckedBoxes = () => {
             const checkboxes = document.getElementsByClassName("checkbox")
             const checkedCheckboxes = []
@@ -28,6 +30,7 @@ mainContainer.addEventListener("click", clickEvent => {
         const topics = getTopics()
         let userSelectedTopicsArray = []
         
+        //For each item in the checkedCheckboxes array, identify the topic object from the topics array that matches the html element value - push to new array of objects "userSelectedTopicsArray"
         const addToUserSelectedTopicsArray = () => {
             checkedCheckboxes.forEach(
                 (element) => {
@@ -44,7 +47,7 @@ mainContainer.addEventListener("click", clickEvent => {
         }
 
         addToUserSelectedTopicsArray()
-
+        //userLetter object that is sent to the API (using sendLetter function), includes a key (selectedTopics) with an array value of the selected topics
         const userLetterObj = {
             authorId: userAuthorId,
             letter: userMessage,
@@ -59,7 +62,7 @@ mainContainer.addEventListener("click", clickEvent => {
     }
 })
 
-
+//HTML for Form - including separate functions for Author and Recipient select options, and Topic checkboxes
 export const LetterForm = () => {
     return `
         <div class="field author select">

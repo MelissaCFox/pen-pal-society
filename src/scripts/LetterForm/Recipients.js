@@ -1,7 +1,7 @@
 import { getAuthors, setRecipientAuthorId } from "../dataAccess.js"
 
 
-
+//Generate a select option for each available recipient author (uses the same database object as "authors")
 export const Recipients = () => {
     const recipients = getAuthors()
     let html = `<label class="label" for="recipient">Recipient</label>
