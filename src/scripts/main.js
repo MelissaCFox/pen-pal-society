@@ -5,16 +5,10 @@ const mainContainer = document.querySelector("#container")
 
 const render = () => {
     fetchAuthors()
-    .then (
-        () => fetchTopics()
-    )
+    .then(() => fetchTopics())
+    .then(() => fetchSentLetters())
     .then(
-        () => fetchSentLetters()
-    )
-    .then(
-        () => {
-            mainContainer.innerHTML = PenPalSociety()
-        }
+        () => mainContainer.innerHTML = PenPalSociety()
     )
 }
 

@@ -52,7 +52,6 @@
       "authorId": 3,
       "letter": "When are you going to write a sequel to Lamb??",
       "recipientAuthorId": 1,
-      "topicId": 1,
       "date": "11/2/2021",
       "selectedTopics": [
         1
@@ -63,7 +62,6 @@
       "authorId": 2,
       "letter": "Hey friend, want to grab drinks sometime soon?",
       "recipientAuthorId": 3,
-      "topicId": 2,
       "date": "11/2/2021",
       "selectedTopics": [
         1,
@@ -81,6 +79,20 @@
         3
       ],
       "id": 4
+    },
+    {
+      "authorId": 4,
+      "letter": "Final test",
+      "recipientAuthorId": 4,
+      "date": "11/8/2021",
+      "selectedTopics": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "id": 5
     }
   ]
 }
