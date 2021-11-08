@@ -49,11 +49,12 @@ const sentLetterItemBuilder = (letter) => {
 }
 
 
-
+//Created a new reversed sentLetters array so that HTML will display with most revent sentLetters first
 export const SentLetters = () => {
     const sentLetters = getSentLetters()
+    const reversedLetters = sentLetters.reverse()
     let html = `<section class="allSentLetters"><ul class="allLetters">`
-    const sentLettersListItems = sentLetters.map(sentLetterItemBuilder)
+    const sentLettersListItems = reversedLetters.map(sentLetterItemBuilder)
     html += sentLettersListItems.join("")
     html += "</ul></section>"
     return html

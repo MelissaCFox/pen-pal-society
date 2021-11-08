@@ -73,15 +73,14 @@
     },
     {
       "authorId": 3,
-      "letter": "delete test",
+      "letter": "What up what up!",
       "recipientAuthorId": 1,
-      "date": "11/3/2021",
+      "date": "11/8/2021",
       "selectedTopics": [
-        1,
-        4,
-        5
+        2,
+        3
       ],
-      "id": 3
+      "id": 4
     }
   ]
 }
