@@ -6,9 +6,9 @@ const applicationState = {
 }
 
 const API = "http://localhost:8088"
-
-export const fetchData = () => {
-    fetch(`${API}/authors`)
+//Fetch Data
+export const fetchAuthors = () => {
+    return fetch(`${API}/authors`)
         .then(response => response.json())
         .then(
             (authors) => {
@@ -16,7 +16,11 @@ export const fetchData = () => {
                 applicationState.authors = authors
             }
         )
-    fetch(`${API}/topics`)
+
+}
+
+export const fetchTopics = () => {
+    return fetch(`${API}/topics`)
         .then(response => response.json())
         .then(
             (topics) => {
@@ -24,6 +28,10 @@ export const fetchData = () => {
                 applicationState.topics = topics
             }
         )
+
+}
+
+export const fetchSentLetters = () => {
     return fetch(`${API}/sentLetters`)
         .then(response => response.json())
         .then(
@@ -32,7 +40,10 @@ export const fetchData = () => {
                 applicationState.sentLetters = sentLetters
             }
         )
+
 }
+
+
 //Get Application State data
 export const getAuthors = () => {
     return applicationState.authors.map(author => ({ ...author }))
@@ -67,7 +78,7 @@ export const setTopicId = (topicId) => {
 }
 
 
-//Fetch Options
+//More Fetch Options
 const mainContainer = document.querySelector("#container")
 
 export const sendLetter = (userSentLetter) => {
